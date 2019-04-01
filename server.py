@@ -23,7 +23,7 @@ CCSS_IV = os.getenv("CCSS_IV")
 
 vote_database = TinyDB('database/database.json')
 vote_query = Query()
-candidates = load_candidates()
+candidates = load_candidates('database/candidates.json')
 
 log_database = TinyDB('database/log.json')
 

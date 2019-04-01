@@ -21,8 +21,8 @@ def validate_vote(client_vote, candidates):
 
     return [1, "Valid"]
 
-def load_candidates():
-    with open('database/candidates.json') as f:
+def load_candidates(file_loc):
+    with open(file_loc) as f:
         candidates_db = json.load(f)
 
     candidates = {}
@@ -32,6 +32,12 @@ def load_candidates():
            candidates[role].append(candidate)
 
     return candidates
+
+def is_majority(votes, total):
+    if (votes > int(total / 2)):
+        return True
+    else:
+        return False
 
 if __name__ == "__main__":
     import json
